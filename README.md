@@ -12,11 +12,13 @@
 	  
 	  https://github.com/VINUPRASANTH/IGSSeleniumTest.git
 	
-	2. Go to Folder IGSSeleniumTest\src\test\resources\testdata 
+	2. Go to Folder IGSSeleniumTest\src\test\resources\testdat\webdriver
+	    
+	   Copy and paste downloaded chromedriver file here
 	
-	3. Open config.properties and update downloaded chromedriver location
+	3. Open config.properties and update platform value
 	 
-	  webdriver.location = \\******\\chromedriver.exe
+	   platform = windows or platform = mac
 	 
 	4. Go to Repo directory IGSSeleniumTest
 	

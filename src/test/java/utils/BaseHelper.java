@@ -26,13 +26,14 @@ public abstract class BaseHelper {
 		
 	}
 	public void browserInitialize() {
-			if(config.get("browser").equals("chrome")){
-		           System.setProperty("webdriver.chrome.driver", config.getProperty("webdriver.location"));
-		           driver = new ChromeDriver();
-				}else {
-				
-				}
-			
+		String projectPath = System.getProperty("user.dir");
+			if(config.getProperty("platform").equals("windows")){
+		           System.setProperty("webdriver.chrome.driver",projectPath+"/src/test/resources/webdriver/chromedriver.exe");
+		          
+		     }else {
+		    	 System.setProperty("webdriver.chrome.driver",projectPath+"/src/test/resources/webdriver/chromedriver");
+		     }
+			 driver = new ChromeDriver();
 		
 	}
 	public Properties getConfig() {
