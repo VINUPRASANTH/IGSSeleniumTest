@@ -26,7 +26,7 @@
 		
 	6. Once test finished, go to IGSSeleniumTest\target
 	
-	7. Open report.html for see result
+	7. Open report.html to check the result
 	
 	
 	
