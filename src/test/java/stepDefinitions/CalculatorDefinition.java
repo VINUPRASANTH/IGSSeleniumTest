@@ -38,8 +38,8 @@ public class CalculatorDefinition {
 
 	@Given("^Launch the Home Loan Calculator Application$")
 	public void launchCalculatorApp() {
-		driver.get(testData.getProperty("url"));
 		driver.manage().window().maximize();
+		driver.get(testData.getProperty("url"));	
 		System.out.println("Application Launched " + testData.getProperty("url"));
 	}
 
@@ -107,10 +107,10 @@ public class CalculatorDefinition {
 				"Home Loan Repayment should be empty");
 		softAssert.assertEquals(homeLoanCalculator.getOtherLoanRepayment().getText(), "",
 				"Other Loan Repayment should be empty");
-		softAssert.assertEquals(homeLoanCalculator.getMonthlyCommitment().getText(), "");
-		softAssert.assertEquals(homeLoanCalculator.getCreditCardLimit().getAttribute("value"), "0");
-		softAssert.assertEquals(homeLoanCalculator.getWorkOutBrorrowButton().isDisplayed(), true);
-		softAssert.assertEquals(homeLoanCalculator.getEstimatedResult(), "$0");
+		softAssert.assertEquals(homeLoanCalculator.getMonthlyCommitment().getText(), "","Monthly commitment should be empty");
+		softAssert.assertEquals(homeLoanCalculator.getCreditCardLimit().getText(), "","Creditcard limit should be empty");
+		softAssert.assertEquals(homeLoanCalculator.getWorkOutBrorrowButton().isDisplayed(), true,"Workout button should be displayed");
+		softAssert.assertEquals(homeLoanCalculator.getEstimatedResult(), "$0","Estimated amount should be $0 by default");
 
 	}
 
@@ -128,9 +128,8 @@ public class CalculatorDefinition {
 
 	@After
 	public void teardown() {
-		softAssert.assertAll();
 		refDriver = driver;
-
+		softAssert.assertAll();
 	}
 
 	@AfterAll
